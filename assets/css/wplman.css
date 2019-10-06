@@ -1,0 +1,34 @@
+#new-shortlink{
+    padding: 30px 0 0;
+}
+#list-shortlink{
+    margin: 40px 0 0 0;
+    position: relative;
+}
+#list-shortlink tbody.empty{
+    padding: 60px;
+}
+.wplman-table-label{
+    padding: 8px;
+}
+
+#list-shortlink #mask{
+    display: none;
+}
+#list-shortlink.busy #mask{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 10% 0;
+    box-sizing: border-box;
+}
+#list-shortlink #mask> div.loading-msg{
+    margin: 0 auto;
+    text-align: center;
+}
+#list-shortlink #mask span{
+    float: none !important;
+}
