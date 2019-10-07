@@ -12,6 +12,9 @@ class Wplman_Redirect{
 		if ( $post && 'shortlink' === $post->post_type ) {
 			$target_url = get_post_meta($post->ID, 'shortlink_target_url', true);
 			$redirect_type = get_post_meta($post->ID, 'shortlink_redirect_type', true);
+			$hits = get_post_meta($post->ID, 'shortlink_hits', true);
+			update_post_meta($post->ID, 'shortlink_hits', $hits + 1);
+
 
 			wp_redirect( $target_url, intval( $redirect_type ) );
 			exit();
