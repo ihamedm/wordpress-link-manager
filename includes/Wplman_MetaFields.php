@@ -20,12 +20,6 @@ $shortlink_meta_args =
 				'required'  => true,
 			),
 			array(
-				'label'     => __( 'Short link slug', WPLMAN_TEXTDOMAIN),
-				'id'        => 'slug',
-				'type'      => 'text',
-				'required'  => true,
-			),
-			array(
 				'label'     => __( 'Target', WPLMAN_TEXTDOMAIN),
 				'id'        => 'target',
 				'type'      => 'radio',

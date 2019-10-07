@@ -49,6 +49,7 @@ class Wplman_Ajax {
 	    $shortlink = array(
 	            'ID' => '',
 	            'title' => '',
+	            'post_name' => '',
 	            'description'   => '',
 	            'target_url'    => '',
 	            'slug'          => '',
@@ -60,7 +61,9 @@ class Wplman_Ajax {
 	    if(isset($shortlink_id) && is_numeric($shortlink_id)){
 		    $shortlink_query = new WP_Query(array('p' => $shortlink_id, 'post_type'=>'shortlink'));
 		    $shortlink_query->the_post();
-		    $shortlink['title'] = get_the_title($shortlink_id);
+		    global $post;
+		    $shortlink['post_name'] = $post->post_name;
+		    $shortlink['title'] = $post->post_title;
 		    $shortlink['ID'] = $shortlink_id;
 		    wp_reset_postdata();
 
@@ -71,7 +74,6 @@ class Wplman_Ajax {
 	                'description'   => $shortlink_meta['shortlink_description'][0],
 	                'target_url'    => $shortlink_meta['shortlink_target_url'][0],
 	                'target'        => $shortlink_meta['shortlink_target'][0],
-	                'slug'          => $shortlink_meta['shortlink_slug'][0],
 	                'redirect_type' => $shortlink_meta['shortlink_redirect_type'][0],
 	                'nofollow'      => $shortlink_meta['shortlink_nofollow'][0],
             ));
@@ -87,6 +89,7 @@ class Wplman_Ajax {
             </div>
             <input name="ID" value="<?php echo $shortlink['ID'];?>" type="hidden">
             <input name="post_type" value="shortlink" type="hidden">
+            <input name="post_status" value="publish" type="hidden">
         <table class="form-table widefat" id="post">
             <tbody>
                 <tr>
@@ -124,7 +127,7 @@ class Wplman_Ajax {
                         <label for="shortlink_slug">Short link slug</label>
                     </th>
                     <td>
-                        <input type="text" id="shortlink_slug" name="shortlink_slug" value="<?php echo $shortlink['slug'];?>" required="">
+                        <input type="text" id="shortlink_slug" name="post_name" value="<?php echo $shortlink['post_name'];?>" required="required">
                     </td>
                 </tr>
 
