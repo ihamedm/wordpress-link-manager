@@ -5,9 +5,18 @@ class Wplman_Ajax {
 	public function __construct(){
 		add_action('wp_ajax_wplman_shortlink_list',                 array($this , 'wplman_shortlink_list'));
 		add_action('wp_ajax_wplman_pagnation_form',                 array($this , 'wplman_pagnation_form'));
+		add_action('wp_ajax_wplman_delete_shortlink',               array($this , 'wplman_delete_shortlink'));
+		add_action('wp_ajax_wplman_edit_form_shortlink',            array($this , 'wplman_edit_form_shortlink'));
+		add_action('wp_ajax_wplman_detail_shortlink',               array($this , 'wplman_detail_shortlink'));
+		add_action('wp_ajax_wplman_add_form_shortlink',             array($this , 'wplman_add_form_shortlink'));
+		add_action('wp_ajax_wplman_save_shortlink',                 array($this , 'wplman_save_shortlink'));
 	}
 
-
+	/**
+	 * @param $get
+	 *
+	 * @return WP_Query
+	 */
 	public function make_query($get){
 		$args = array(
 			'post_type' => 'shortlink'
@@ -31,14 +40,141 @@ class Wplman_Ajax {
 
 		}
 
-//		var_dump($_GET['query_data']);
-//		die();
-
-
 		$query = new WP_Query($args);
 		return $query;
 	}
 
+    public function shortlink_form($shortlink_id = false){
+
+	    $shortlink = array(
+	            'ID' => '',
+	            'title' => '',
+	            'description'   => '',
+	            'target_url'    => '',
+	            'slug'          => '',
+	            'target'        => 'blank',
+	            'redirect_type' => 301,
+	            'nofollow'      => 'yes'
+        );
+
+	    if(isset($shortlink_id) && is_numeric($shortlink_id)){
+		    $shortlink_query = new WP_Query(array('p' => $shortlink_id, 'post_type'=>'shortlink'));
+		    $shortlink_query->the_post();
+		    $shortlink['title'] = get_the_title($shortlink_id);
+		    $shortlink['ID'] = $shortlink_id;
+		    wp_reset_postdata();
+
+		    $shortlink_meta = get_post_meta($shortlink_id);
+
+
+		    $shortlink = array_merge($shortlink, array(
+	                'description'   => $shortlink_meta['shortlink_description'][0],
+	                'target_url'    => $shortlink_meta['shortlink_target_url'][0],
+	                'target'        => $shortlink_meta['shortlink_target'][0],
+	                'slug'          => $shortlink_meta['shortlink_slug'][0],
+	                'redirect_type' => $shortlink_meta['shortlink_redirect_type'][0],
+	                'nofollow'      => $shortlink_meta['shortlink_nofollow'][0],
+            ));
+	    }
+
+	    ?>
+
+        <form id="shortlink-edit-form">
+            <div class="alert-area"></div>
+
+            <div class="mask">
+                <span class="spinner is-active"></span>
+            </div>
+            <input name="ID" value="<?php echo $shortlink['ID'];?>" type="hidden">
+            <input name="post_type" value="shortlink" type="hidden">
+        <table class="form-table widefat" id="post">
+            <tbody>
+                <tr>
+                    <th>
+                        <label for="shortlink_title">Title</label>
+                    </th>
+                    <td>
+                        <input type="text" id="shortlink_title" name="post_title" value="<?php echo $shortlink['title'];?>" required="required"><br>
+                        <span class="description">redirect user to this link</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="shortlink_description">Description</label>
+                    </th>
+                    <td>
+                        <textarea rows="4" id="shortlink_description" name="shortlink_description"><?php echo $shortlink['description'];?></textarea><br>
+                        <span class="description">This text only show in admin area</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="shortlink_target_url">Destination URL</label>
+                    </th>
+                    <td>
+                        <input type="url" id="shortlink_target_url" name="shortlink_target_url" value="<?php echo $shortlink['target_url'];?>" required=""><br>
+                        <span class="description">redirect user to this link</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="shortlink_slug">Short link slug</label>
+                    </th>
+                    <td>
+                        <input type="text" id="shortlink_slug" name="shortlink_slug" value="<?php echo $shortlink['slug'];?>" required="">
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="shortlink_target">Target</label>
+                    </th>
+                    <td>
+                        <label for=""><input id="shortlink_target-blank" name="shortlink_target" type="radio" value="blank" <?php echo ($shortlink['target'] == 'blank' ) ? 'checked' : '';?>>Open in new tab</label>
+                        <label for=""><input id="shortlink_target-none" name="shortlink_target" type="radio" value="none" <?php echo ($shortlink['target'] == 'none' ) ? 'checked' : '';?>>Open in same tab</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="shortlink_redirect_type">Redirect Type</label>
+                    </th>
+                    <td>
+                        <label for=""><input id="shortlink_redirect_type-301" name="shortlink_redirect_type" type="radio" value="301" <?php echo ($shortlink['redirect_type'] == 301 ) ? 'checked' : '';?>>Permanent 301</label>
+                        <label for=""><input id="shortlink_redirect_type-302" name="shortlink_redirect_type" type="radio" value="302" <?php echo ($shortlink['redirect_type'] == 302 ) ? 'checked' : '';?>>Temporary 302</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
+                        <label for="shortlink_nofollow">Nofollow attribute</label>
+                    </th>
+                    <td>
+                        <label for=""><input id="shortlink_nofollow-yes" name="shortlink_nofollow" type="radio" value="yes" <?php echo ($shortlink['nofollow'] == 'yes' ) ? 'checked' : '';?>>Add Nofollow attribute</label>
+                        <label for=""><input id="shortlink_nofollow-no" name="shortlink_nofollow" type="radio" value="no" <?php echo ($shortlink['nofollow'] == 'no' ) ? 'checked' : '';?>>Do not add Nofollow attribute</label>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+            <button type="submit" class="button button-primary button-hero"><?php _e('Save date', WPLMAN_TEXTDOMAIN);?></button>
+
+
+        </form>
+
+        <?php
+
+    }
+
+
+
+    /**
+	 * Ajax methods
+	 */
 
 	public function wplman_shortlink_list(){
 		$query = $this->make_query($_GET['query_data']);
@@ -46,13 +182,13 @@ class Wplman_Ajax {
 
 		$meta = get_post_meta(get_the_ID());
 			?>
-			<tr>
+			<tr id="shortlink-<?php the_ID();?>" data-id="<?php the_ID();?>" class="shortlink">
 				<td>
 					<strong>#<?php the_ID();?> - <?php the_title();?></strong>
 					<div class="row-actions">
-						<span class="detail"><a href="#"><?php _e('Details', WPLMAN_TEXTDOMAIN);?></a> | </span>
-						<span class="edit"><a href="#"><?php _e('Edit', WPLMAN_TEXTDOMAIN);?></a> | </span>
-						<span class="trash"><a href="#" class="submitdelete"><?php _e('Trash', WPLMAN_TEXTDOMAIN);?></a></span>
+						<span class="wplman-detail"><a href="#"><?php _e('Detail', WPLMAN_TEXTDOMAIN);?></a> | </span>
+						<span class="wplman-edit"><a href="#"><?php _e('Edit', WPLMAN_TEXTDOMAIN);?></a> | </span>
+						<span class="wplman-trash trash"><a href="#" class="submitdelete"><?php _e('Trash', WPLMAN_TEXTDOMAIN);?></a></span>
 					</div>
 				</td>
 
@@ -83,6 +219,7 @@ class Wplman_Ajax {
 		die();
 	}
 
+
 	public function wplman_pagnation_form(){
 		$query = $this->make_query($_GET['query_data']);
 		$current_page = (isset($_GET['query_data']) && (int) $_GET['query_data']['paged'] > 0) ? (int) $_GET['query_data']['paged'] : 1;
@@ -105,5 +242,89 @@ class Wplman_Ajax {
 		die();
 
 	}
+
+
+	public function wplman_delete_shortlink(){
+	    if(isset($_POST['post_id'])){
+		    $removed = wp_trash_post($_POST['post_id']);
+		    if($removed){
+		        wp_send_json_success($removed);
+            }else{
+		        wp_send_json_error($removed);
+            }
+        }else{
+		    wp_send_json_error('post id not valid');
+        }
+	    die();
+    }
+
+
+    public function wplman_edit_form_shortlink(){
+        $this->shortlink_form((int) $_GET['shortlink_id']);
+        die();
+    }
+
+
+    public function wplman_add_form_shortlink(){
+        $this->shortlink_form();
+        die();
+    }
+
+
+    public function wplman_detail_shortlink(){
+	    if(isset($_GET['shortlink_id']) && is_numeric($_GET['shortlink_id'])){
+		    $shortlink_query = new WP_Query(array('p' => $_GET['shortlink_id'], 'post_type'=>'shortlink'));
+		    $shortlink_query->the_post();
+		    $shortlink['title'] = get_the_title($_GET['shortlink_id']);
+		    wp_reset_postdata();
+
+		    $shortlink_meta = get_post_meta($_GET['shortlink_id']);
+
+
+		    $shortlink = array_merge($shortlink, array(
+			    'description'   => $shortlink_meta['shortlink_description'][0],
+			    'target_url'    => $shortlink_meta['shortlink_target_url'][0],
+			    'target'        => $shortlink_meta['shortlink_target'][0],
+			    'slug'          => $shortlink_meta['shortlink_slug'][0],
+			    'redirect_type' => $shortlink_meta['shortlink_redirect_type'][0],
+			    'nofollow'      => $shortlink_meta['shortlink_nofollow'][0],
+		    ));
+
+		    foreach($shortlink as $key => $value ){
+		        echo '<p><strong>'.$key.'  :</strong> '.$value.'</p>';
+            }
+		    echo '<a href="'.get_permalink($shortlink['ID']).'" target="_blank">'.get_permalink($shortlink['ID']).'</a>';
+	    }
+        die();
+    }
+
+
+    public function wplman_save_shortlink(){
+	    $form_data = $_POST['form_data'];
+	    if(isset($form_data['ID']) && (int) $form_data['ID'] > 0 ){
+		    $result = wp_update_post($form_data, true);
+		    if(is_wp_error($result)){
+			    echo '<div class="notice notice-error notice-alt"><p>'.__('Something wrong, refresh page and try again!').'</p></div>';
+			    die();
+            }
+        }else{
+	        unset($form_data['ID']);
+	        $new_id = wp_insert_post($form_data, true);
+		    if(is_wp_error($new_id)){
+			    echo '<div class="notice notice-error notice-alt"><p>'.__('Something wrong, refresh page and try again!').'</p></div>';
+			    die();
+		    }
+	        $form_data['ID'] = $new_id;
+        }
+
+	    foreach ($form_data as $key => $value){
+		    if(substr($key, 0, 10) === 'shortlink_'){
+			    update_post_meta($form_data['ID'], $key, $value);
+		    }
+	    }
+
+        echo '<div class="notice notice-success notice-alt"><p>'.__('Update shortlink was successful.').'</p></div>';
+	    die();
+    }
 }
 new Wplman_Ajax();

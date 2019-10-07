@@ -5,6 +5,9 @@
     margin: 40px 0 0 0;
     position: relative;
 }
+#list-shortlink tr.shortlink{
+    transition: background-color 500ms ease-in;
+}
 #list-shortlink tbody.empty{
     padding: 60px;
 }
@@ -31,4 +34,28 @@
 }
 #list-shortlink #mask span{
     float: none !important;
+}
+
+
+#shortlink-edit-form{
+    position: relative;
+}
+#shortlink-edit-form .mask{
+    display: none;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background: rgba(255,255,255,0.8);
+    top:0;
+    left:0;
+    padding: 30% 0;
+    box-sizing: border-box;
+    text-align: center;
+}
+#shortlink-edit-form .mask span{
+    float: none !important;
+    margin: 0 auto;
+}
+#shortlink-edit-form.busy .mask{
+    display: block;
 }

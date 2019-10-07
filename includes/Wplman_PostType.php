@@ -1,5 +1,5 @@
 <?php
-include dirname( __FILE__ ) . '/library/class-wplman-post-type-generator.php';
+include_once dirname( __FILE__ ) . '/library/class-wplman-post-type-generator.php';
 
 
 $post_type_names = array(
@@ -18,8 +18,6 @@ $post_type_options = array(
 	'show_in_nav_menus' => false,
 	'show_in_menu' => true,
 	'show_in_admin_bar' => false,
-//	@todo select from plugin options
-	'query_var' => 'shortlink'
 );
 
 /**
