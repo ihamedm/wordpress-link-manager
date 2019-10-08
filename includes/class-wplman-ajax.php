@@ -10,6 +10,7 @@ class Wplman_Ajax {
 		add_action('wp_ajax_wplman_detail_shortlink',               array($this , 'wplman_detail_shortlink'));
 		add_action('wp_ajax_wplman_add_form_shortlink',             array($this , 'wplman_add_form_shortlink'));
 		add_action('wp_ajax_wplman_save_shortlink',                 array($this , 'wplman_save_shortlink'));
+
 	}
 
 	/**

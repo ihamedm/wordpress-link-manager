@@ -124,8 +124,9 @@ class WpLinkManager{
 			require_once dirname( __FILE__ ) . '/includes/class-wplman-ajax.php';
 			require_once dirname( __FILE__ ) . '/includes/wplman-dashboard.php';
 		}else{
-			require_once dirname( __FILE__ ) . '/includes/Wplman_Frontend.php';
+			// action and include that only need for frontend
 		}
+
 
 
 
@@ -138,6 +139,7 @@ class WpLinkManager{
 		require_once dirname( __FILE__ ) . '/includes/library/Wplman_Dependencies.php';
 		require_once dirname( __FILE__ ) . '/includes/Wplman_PostType.php';
 		require_once dirname( __FILE__ ) . '/includes/class-wplman-redirect.php';
+		require_once dirname( __FILE__ ) . '/includes/class-wplman-frontend.php';
 	}
 
 

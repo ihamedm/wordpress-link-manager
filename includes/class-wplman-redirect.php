@@ -15,7 +15,6 @@ class Wplman_Redirect{
 			$hits = get_post_meta($post->ID, 'shortlink_hits', true);
 			update_post_meta($post->ID, 'shortlink_hits', $hits + 1);
 
-
 			wp_redirect( $target_url, intval( $redirect_type ) );
 			exit();
 		}

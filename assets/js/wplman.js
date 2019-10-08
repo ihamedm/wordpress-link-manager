@@ -136,7 +136,6 @@ jQuery(document).ready(function() {
             url: ajaxurl,
             data: ajax_data,
             success: function (response) {
-                console.log(!!response.success)
                 $(item).css({"background":"#ff572247"});
                 setTimeout(function(){
                     $(item).remove()
