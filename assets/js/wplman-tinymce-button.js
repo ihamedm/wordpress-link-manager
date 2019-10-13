@@ -14,7 +14,7 @@
             //button functionality.
             editor.addCommand("wplman_command", function() {
 
-                tb_show('Inser link from link manager', 'admin-ajax.php?action=tb_test')
+                tb_show('Inser link from link manager', 'admin-ajax.php?action=insert_shortlink')
 
 
             });

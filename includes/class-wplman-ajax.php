@@ -11,7 +11,7 @@ class Wplman_Ajax {
 		add_action('wp_ajax_wplman_add_form_shortlink',             array($this , 'wplman_add_form_shortlink'));
 		add_action('wp_ajax_wplman_save_shortlink',                 array($this , 'wplman_save_shortlink'));
 
-		add_action('wp_ajax_tb_test',                 array($this , 'tb_test'));
+		add_action('wp_ajax_insert_shortlink',                 array($this , 'insert_shortlink'));
 
 	}
 
@@ -205,34 +205,51 @@ class Wplman_Ajax {
 	 * Ajax methods
 	 */
 
-    public function tb_test(){
+    public function insert_shortlink(){
 	    ?>
         <form id="wplman-insert-shortlink-form">
-            <select name="shortlink_id">
-                <option value=""><?php _e('Choose a shortlink', WPLMAN_TEXTDOMAIN);?></option>
-            <?php
-            $shortlinks_query = new WP_Query(array('post_type' => 'shortlink'));
-                if($shortlinks_query->have_posts()) : while($shortlinks_query->have_posts()) : $shortlinks_query->the_post();
-                echo '<option value="'.get_the_ID().'">'.get_the_title().'</option>';
-                endwhile;endif;wp_reset_postdata();
-            ?>
+            <table class="form-table">
+                <tbody>
+                <tr>
+                    <th><label for="shortlink_id">Text input</label></th>
+                    <th><select name="shortlink_id">
+                            <option value=""><?php _e('Choose a shortlink', WPLMAN_TEXTDOMAIN);?></option>
+		                    <?php
+		                    $shortlinks_query = new WP_Query(array('post_type' => 'shortlink'));
+		                    if($shortlinks_query->have_posts()) : while($shortlinks_query->have_posts()) : $shortlinks_query->the_post();
+			                    echo '<option value="'.get_the_ID().'">'.get_the_title().'</option>';
+		                    endwhile;endif;wp_reset_postdata();
+		                    ?>
 
-            </select>
-            <label for="text">
-	            <?php _e('Optional text to replace with shortlink title', WPLMAN_TEXTDOMAIN);?>
-                <input type="text" name="text">
-            </label>
+                        </select>
+                    </th>
 
-            <button type="submit" class="button button-primary" disabled><?php _e('Insert shortlink', WPLMAN_TEXTDOMAIN);?></button>
+                </tr>
+                <tr>
+                    <th><label for="text"><?php _e('Title', WPLMAN_TEXTDOMAIN);?></label></th>
+                    <th>
+                        <input type="text" name="text" class="regular-text">
+                        <p class="howto"><?php _e('Optional text to replace with shortlink title', WPLMAN_TEXTDOMAIN);?></p>
+                    </th>
+                </tr>
+
+                <tr>
+                    <th>
+                        <button type="submit" class="button button-primary" disabled><?php _e('Insert shortlink', WPLMAN_TEXTDOMAIN);?></button>
+                    </th>
+                </tr>
+                </tbody>
+            </table>
+
         </form>
-<a href="" target=""
+
         <script type="text/javascript">
 
             var formElement = jQuery('#wplman-insert-shortlink-form')
 
             formElement.on('change', 'select', function(){
                 if($(this).val() !== ''){
-                    $(this).siblings('button').prop('disabled', false)
+                    $(this).parents('form').find('button').prop('disabled', false)
                 }
             })
 
