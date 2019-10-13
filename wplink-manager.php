@@ -3,7 +3,7 @@
  *
  * @wordpress-plugin
  * Plugin Name: Wordpress Link Manager
- * Plugin URI: https://
+ * Plugin URI: https://github.com/ihamedm/wordpress-link-manager
  * Description: Wordpress plugin to create pretty and short link based on your site URL for external (or internal) ugly links
  * Version: 0.1
  * Author: Hamed Movasaqpoor

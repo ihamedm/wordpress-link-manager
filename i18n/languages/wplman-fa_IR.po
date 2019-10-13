@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-10-13 17:57+0330\n"
-"PO-Revision-Date: 2019-10-13 18:21+0330\n"
+"POT-Creation-Date: 2019-10-13 18:51+0330\n"
+"PO-Revision-Date: 2019-10-13 18:51+0330\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -16,111 +16,111 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 
 #: includes/class-wplman-ajax-frontend.php:68
-#: includes/class-wplman-ajax.php:304
+#: includes/class-wplman-ajax.php:326
 msgid "Redirect Type: "
 msgstr "نوع ریدایرکت "
 
 #: includes/class-wplman-ajax-frontend.php:69
-#: includes/class-wplman-ajax.php:305
+#: includes/class-wplman-ajax.php:327
 msgid "NoFollow"
 msgstr "ویژگی Nofollow"
 
 #: includes/class-wplman-ajax-frontend.php:85
-#: includes/class-wplman-ajax.php:321
+#: includes/class-wplman-ajax.php:343
 msgid "Not found any data"
 msgstr "هیچ اعلانی برای نمایش وجود ندارد‫"
 
 #: includes/class-wplman-ajax-frontend.php:99
-#: includes/class-wplman-ajax.php:335
+#: includes/class-wplman-ajax.php:360
 msgid "items"
 msgstr "آیتم ها"
 
 #: includes/class-wplman-ajax-frontend.php:104
-#: includes/class-wplman-ajax.php:340
+#: includes/class-wplman-ajax.php:365
 msgid "of"
 msgstr "از"
 
-#: includes/class-wplman-ajax.php:155
+#: includes/class-wplman-ajax.php:171
 #: includes/library/class-wplman-post-type-generator.php:354
 msgid "Add New"
 msgstr "افزودن جدید"
 
-#: includes/class-wplman-ajax.php:156
+#: includes/class-wplman-ajax.php:172
 msgid "Add new link group"
 msgstr "افزودن گروه جدید"
 
-#: includes/class-wplman-ajax.php:195
+#: includes/class-wplman-ajax.php:211
 msgid "Save date"
 msgstr "ذخیره دیتا"
 
-#: includes/class-wplman-ajax.php:223
+#: includes/class-wplman-ajax.php:242
 msgid "Choose a shortlink"
 msgstr "یک گزینه انتخاب کنید"
 
-#: includes/class-wplman-ajax.php:236
+#: includes/class-wplman-ajax.php:255
 msgid "Title"
 msgstr "عنوان"
 
-#: includes/class-wplman-ajax.php:239
+#: includes/class-wplman-ajax.php:258
 msgid "Optional text to replace with shortlink title"
 msgstr "متن اختیاری برای جایگزینی با عنوان اصلی لینک کوتاه"
 
-#: includes/class-wplman-ajax.php:245
+#: includes/class-wplman-ajax.php:264
 msgid "Insert shortlink"
 msgstr "قراردادن لینک کوتاه"
 
-#: includes/class-wplman-ajax.php:293
+#: includes/class-wplman-ajax.php:315
 msgid "Detail"
 msgstr "نمایش جزییات"
 
-#: includes/class-wplman-ajax.php:294
+#: includes/class-wplman-ajax.php:316
 msgid "Edit"
 msgstr "ویرایش"
 
-#: includes/class-wplman-ajax.php:295
+#: includes/class-wplman-ajax.php:317
 msgid "Trash"
 msgstr "حذف"
 
-#: includes/class-wplman-ajax.php:412 includes/class-wplman-ajax.php:419
+#: includes/class-wplman-ajax.php:452 includes/class-wplman-ajax.php:459
 msgid "Something wrong, refresh page and try again!"
 msgstr "مشکلی بوجود آمده، صفحه را مجددا بارگذاری کنی"
 
-#: includes/class-wplman-ajax.php:438
+#: includes/class-wplman-ajax.php:478
 msgid "Update shortlink was successful."
 msgstr "آپدیت با موفقیت انجام شد‫."
 
-#: includes/class-wplman-frontend.php:41
+#: includes/class-wplman-frontend.php:52
 msgid "Search ..."
 msgstr "جستجو …"
 
-#: includes/class-wplman-frontend.php:61
+#: includes/class-wplman-frontend.php:72
 #: includes/dashboard/class-wplman-page-main.php:33
 msgid "Loading data ..."
 msgstr "بارگزاری اطلاعات‫…"
 
-#: includes/class-wplman-frontend.php:68
+#: includes/class-wplman-frontend.php:79
 #: includes/dashboard/class-wplman-page-main.php:40
 msgid "Link"
 msgstr "لینک"
 
-#: includes/class-wplman-frontend.php:69
+#: includes/class-wplman-frontend.php:80
 #: includes/dashboard/class-wplman-page-main.php:41
 msgid "Target link"
 msgstr "لینک هدف"
 
-#: includes/class-wplman-frontend.php:70
+#: includes/class-wplman-frontend.php:81
 #: includes/dashboard/class-wplman-page-main.php:42
-#: includes/wplman-metafields.php:53
+#: includes/wplman-metafields.php:58
 msgid "Hits"
 msgstr "بازدیدها"
 
-#: includes/class-wplman-frontend.php:71
+#: includes/class-wplman-frontend.php:82
 #: includes/dashboard/class-wplman-page-main.php:43
-#: includes/wplman-metafields.php:10
+#: includes/wplman-metafields.php:15
 msgid "Description"
 msgstr "توضیح"
 
-#: includes/class-wplman-frontend.php:72
+#: includes/class-wplman-frontend.php:83
 #: includes/dashboard/class-wplman-page-main.php:44
 msgid "Date"
 msgstr "تاریخ"
@@ -228,14 +228,6 @@ msgstr "همه موارد ضروری مشخص شده را باید پر کنید
 #: includes/dashboard/class-wplman-page-configurations.php:22
 msgid "null"
 msgstr "."
-
-#: includes/dashboard/class-wplman-page-configurations.php:34
-msgid "About text"
-msgstr "متن درباره ما"
-
-#: includes/dashboard/class-wplman-page-configurations.php:41
-msgid "Text that show in app about page."
-msgstr "متن نمایشی در صفحه درباره ما اپلیکیشن‫."
 
 #: includes/dashboard/class-wplman-page-configurations.php:54
 msgid "All plugin Configurations placed in below form"
@@ -408,61 +400,67 @@ msgstr ""
 msgid "%s draft updated."
 msgstr "اطلاعات بروزرسانی شد"
 
-#: includes/library/wplman-helpers.php:11
+#: includes/library/wplman-helpers.php:14
 msgid "All Groups"
 msgstr ""
 
-#: includes/library/wplman-helpers.php:17
+#: includes/library/wplman-helpers.php:20
 msgid "Filter"
 msgstr ""
 
-#: includes/wplman-metafields.php:7
+#: includes/wplman-metafields.php:12
 msgid "Short link data"
 msgstr "اطلاعات لینک کوتاه"
 
-#: includes/wplman-metafields.php:13
+#: includes/wplman-metafields.php:18
 msgid "This text only show in admin area"
 msgstr "این متن فقط در داشبورد مدیریت دیده می شود"
 
-#: includes/wplman-metafields.php:16
+#: includes/wplman-metafields.php:21
 msgid "Destination URL"
 msgstr "لینک مقصد"
 
-#: includes/wplman-metafields.php:23
+#: includes/wplman-metafields.php:28
 msgid "Target"
 msgstr "هدف"
 
-#: includes/wplman-metafields.php:27
+#: includes/wplman-metafields.php:32
 msgid "Open in new tab"
 msgstr "بازشدن در پنجره جدید"
 
-#: includes/wplman-metafields.php:28
+#: includes/wplman-metafields.php:33
 msgid "Open in same tab"
 msgstr "باز شدن در پنجره جاری"
 
-#: includes/wplman-metafields.php:33
+#: includes/wplman-metafields.php:38
 msgid "Redirect Type"
 msgstr "نوع ریدایرکت"
 
-#: includes/wplman-metafields.php:37
+#: includes/wplman-metafields.php:42
 msgid "Permanent 301"
 msgstr "دائمی ۳۰۱"
 
-#: includes/wplman-metafields.php:38
+#: includes/wplman-metafields.php:43
 msgid "Temporary 302"
 msgstr "موقت ۳۰۲"
 
-#: includes/wplman-metafields.php:43
+#: includes/wplman-metafields.php:48
 msgid "Nofollow attribute"
 msgstr "ویژگی Nofollow"
 
-#: includes/wplman-metafields.php:47
+#: includes/wplman-metafields.php:52
 msgid "Add Nofollow attribute"
 msgstr "افزودن Nofollow به لینک"
 
-#: includes/wplman-metafields.php:48
+#: includes/wplman-metafields.php:53
 msgid "Do not add Nofollow attribute"
 msgstr "بدون Nofollow"
+
+#~ msgid "About text"
+#~ msgstr "متن درباره ما"
+
+#~ msgid "Text that show in app about page."
+#~ msgstr "متن نمایشی در صفحه درباره ما اپلیکیشن‫."
 
 #~ msgid "All Categories"
 #~ msgstr "همه دسته بندی ها"
