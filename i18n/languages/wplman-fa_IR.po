@@ -1,0 +1,933 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2019-10-13 17:57+0330\n"
+"PO-Revision-Date: 2019-10-13 18:21+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.2.1\n"
+"X-Poedit-Basepath: ../..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: includes/class-wplman-ajax-frontend.php:68
+#: includes/class-wplman-ajax.php:304
+msgid "Redirect Type: "
+msgstr "نوع ریدایرکت "
+
+#: includes/class-wplman-ajax-frontend.php:69
+#: includes/class-wplman-ajax.php:305
+msgid "NoFollow"
+msgstr "ویژگی Nofollow"
+
+#: includes/class-wplman-ajax-frontend.php:85
+#: includes/class-wplman-ajax.php:321
+msgid "Not found any data"
+msgstr "هیچ اعلانی برای نمایش وجود ندارد‫"
+
+#: includes/class-wplman-ajax-frontend.php:99
+#: includes/class-wplman-ajax.php:335
+msgid "items"
+msgstr "آیتم ها"
+
+#: includes/class-wplman-ajax-frontend.php:104
+#: includes/class-wplman-ajax.php:340
+msgid "of"
+msgstr "از"
+
+#: includes/class-wplman-ajax.php:155
+#: includes/library/class-wplman-post-type-generator.php:354
+msgid "Add New"
+msgstr "افزودن جدید"
+
+#: includes/class-wplman-ajax.php:156
+msgid "Add new link group"
+msgstr "افزودن گروه جدید"
+
+#: includes/class-wplman-ajax.php:195
+msgid "Save date"
+msgstr "ذخیره دیتا"
+
+#: includes/class-wplman-ajax.php:223
+msgid "Choose a shortlink"
+msgstr "یک گزینه انتخاب کنید"
+
+#: includes/class-wplman-ajax.php:236
+msgid "Title"
+msgstr "عنوان"
+
+#: includes/class-wplman-ajax.php:239
+msgid "Optional text to replace with shortlink title"
+msgstr "متن اختیاری برای جایگزینی با عنوان اصلی لینک کوتاه"
+
+#: includes/class-wplman-ajax.php:245
+msgid "Insert shortlink"
+msgstr "قراردادن لینک کوتاه"
+
+#: includes/class-wplman-ajax.php:293
+msgid "Detail"
+msgstr "نمایش جزییات"
+
+#: includes/class-wplman-ajax.php:294
+msgid "Edit"
+msgstr "ویرایش"
+
+#: includes/class-wplman-ajax.php:295
+msgid "Trash"
+msgstr "حذف"
+
+#: includes/class-wplman-ajax.php:412 includes/class-wplman-ajax.php:419
+msgid "Something wrong, refresh page and try again!"
+msgstr "مشکلی بوجود آمده، صفحه را مجددا بارگذاری کنی"
+
+#: includes/class-wplman-ajax.php:438
+msgid "Update shortlink was successful."
+msgstr "آپدیت با موفقیت انجام شد‫."
+
+#: includes/class-wplman-frontend.php:41
+msgid "Search ..."
+msgstr "جستجو …"
+
+#: includes/class-wplman-frontend.php:61
+#: includes/dashboard/class-wplman-page-main.php:33
+msgid "Loading data ..."
+msgstr "بارگزاری اطلاعات‫…"
+
+#: includes/class-wplman-frontend.php:68
+#: includes/dashboard/class-wplman-page-main.php:40
+msgid "Link"
+msgstr "لینک"
+
+#: includes/class-wplman-frontend.php:69
+#: includes/dashboard/class-wplman-page-main.php:41
+msgid "Target link"
+msgstr "لینک هدف"
+
+#: includes/class-wplman-frontend.php:70
+#: includes/dashboard/class-wplman-page-main.php:42
+#: includes/wplman-metafields.php:53
+msgid "Hits"
+msgstr "بازدیدها"
+
+#: includes/class-wplman-frontend.php:71
+#: includes/dashboard/class-wplman-page-main.php:43
+#: includes/wplman-metafields.php:10
+msgid "Description"
+msgstr "توضیح"
+
+#: includes/class-wplman-frontend.php:72
+#: includes/dashboard/class-wplman-page-main.php:44
+msgid "Date"
+msgstr "تاریخ"
+
+#: includes/dashboard/class-wplman-dashboard-pages.php:19
+#: includes/dashboard/class-wplman-dashboard-pages.php:20
+msgid "WP Link Manager"
+msgstr "مدیریت لینک وردپرس"
+
+#: includes/dashboard/class-wplman-dashboard-pages.php:31
+#: includes/dashboard/class-wplman-dashboard-pages.php:77
+msgid "Wp Link Manager Configurations"
+msgstr "پیکربندی مدیریت لینک وردپرس"
+
+#: includes/dashboard/class-wplman-dashboard-pages.php:32
+msgid "Configurations"
+msgstr "پیکربندی ها"
+
+#: includes/dashboard/class-wplman-dashboard-pages.php:41
+msgid "Wp Link Manager About"
+msgstr "درباره"
+
+#: includes/dashboard/class-wplman-dashboard-pages.php:42
+msgid "Help & Support"
+msgstr "راهنما و پشتیبانی"
+
+#: includes/dashboard/class-wplman-dashboard-pages.php:61
+msgid "Wp Link Manager Dashboard"
+msgstr "داشبوردمدیریت لینک وردپرس"
+
+#: includes/dashboard/class-wplman-dashboard-pages.php:98
+msgid "Wp Link Manager Help & Support"
+msgstr "راهنما و پشتیبانی مدیریت لینک وردپرس"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:69
+#: includes/library/class-wplman-field-generator.php:88
+#: includes/library/class-wplman-field-generator.php:97
+msgid "Choose Image"
+msgstr "انتخاب عکس"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:70
+msgid "Upload or choose image"
+msgstr "باگزاری یا انتخاب عکس"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:77
+msgid "Error"
+msgstr "خطا"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:78
+msgid "Cancel"
+msgstr "پشیمان شدم"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:79
+msgid "Ok"
+msgstr "باشه"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:80
+msgid "Done"
+msgstr "انجام شد"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:81
+msgid "Delete"
+msgstr "حذف"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:82
+msgid "Are you sure to remove?"
+msgstr "برای حذف مطمئن هستید؟"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:83
+msgid "Edit shortlink"
+msgstr "ویرایش لینک کوتاه"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:84
+msgid "Detail shortlink"
+msgstr "جزییات لینک کوتاه"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:85
+msgid "Add new shortlink"
+msgstr "افزودن لینک کوتاه جدید"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:86
+msgid "Update"
+msgstr "آپدیت"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:87
+msgid "Save"
+msgstr "ذخیره"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:88
+msgid "Settings saved."
+msgstr "تنظیمات ذخیره شد‫."
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:89
+msgid "Problem occurred during dave options!"
+msgstr "مشکلی در ذخیره تنظیمات بوجود آمد‫!"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:90
+msgid "We have problem to do this, reload page and try again!"
+msgstr "مشکلی در انجام فرایند بوجود آمد‫.‬ لطفا این صفحه را مجدد بارگزاری کنید‫!"
+
+#: includes/dashboard/class-wplman-dashboard-scripts.php:91
+msgid "Fill all necessary fields"
+msgstr "همه موارد ضروری مشخص شده را باید پر کنید‫"
+
+#: includes/dashboard/class-wplman-page-configurations.php:22
+msgid "null"
+msgstr "."
+
+#: includes/dashboard/class-wplman-page-configurations.php:34
+msgid "About text"
+msgstr "متن درباره ما"
+
+#: includes/dashboard/class-wplman-page-configurations.php:41
+msgid "Text that show in app about page."
+msgstr "متن نمایشی در صفحه درباره ما اپلیکیشن‫."
+
+#: includes/dashboard/class-wplman-page-configurations.php:54
+msgid "All plugin Configurations placed in below form"
+msgstr "گزینه های پیکربندی در فرم زیر نمایش داده شده"
+
+#: includes/dashboard/class-wplman-page-configurations.php:62
+msgid "About can not be blank!"
+msgstr "متن درباره ما نمی تواند خالی بماند‫‫!"
+
+#: includes/dashboard/class-wplman-page-main.php:2
+msgid "Add new Short link"
+msgstr "افزودن لینک کوتاه جدید"
+
+#: includes/library/class-wplman-field-generator.php:89
+#: includes/library/class-wplman-field-generator.php:98
+msgid "Delete Image"
+msgstr "حذف عکس"
+
+#: includes/library/class-wplman-post-type-generator.php:350
+#: includes/library/class-wplman-post-type-generator.php:351
+#: includes/library/class-wplman-post-type-generator.php:352
+#: includes/library/class-wplman-post-type-generator.php:353
+#: includes/library/class-wplman-post-type-generator.php:428
+#: includes/library/class-wplman-post-type-generator.php:429
+#: includes/library/class-wplman-post-type-generator.php:430
+#: includes/library/class-wplman-post-type-generator.php:534
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:355
+#: includes/library/class-wplman-post-type-generator.php:435
+#, php-format
+msgid "Add New %s"
+msgstr "افزودن جدید"
+
+#: includes/library/class-wplman-post-type-generator.php:356
+#: includes/library/class-wplman-post-type-generator.php:432
+#, php-format
+msgid "Edit %s"
+msgstr "ویرایش"
+
+#: includes/library/class-wplman-post-type-generator.php:357
+#, php-format
+msgid "New %s"
+msgstr "جدید"
+
+#: includes/library/class-wplman-post-type-generator.php:358
+#: includes/library/class-wplman-post-type-generator.php:433
+#, php-format
+msgid "View %s"
+msgstr "نمایش"
+
+#: includes/library/class-wplman-post-type-generator.php:359
+#: includes/library/class-wplman-post-type-generator.php:439
+#, php-format
+msgid "Search %s"
+msgstr "جستجو"
+
+#: includes/library/class-wplman-post-type-generator.php:360
+#: includes/library/class-wplman-post-type-generator.php:444
+#, php-format
+msgid "No %s found"
+msgstr "هیچ %s پیدا نشد"
+
+#: includes/library/class-wplman-post-type-generator.php:361
+#, php-format
+msgid "No %s found in Trash"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:362
+#: includes/library/class-wplman-post-type-generator.php:438
+#, php-format
+msgid "Parent %s:"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:431
+#, php-format
+msgid "All %s"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:434
+#, php-format
+msgid "Update %s"
+msgstr "آپدیت"
+
+#: includes/library/class-wplman-post-type-generator.php:436
+#, php-format
+msgid "New %s Name"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:437
+#, php-format
+msgid "Parent %s"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:440
+#, php-format
+msgid "Popular %s"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:441
+#, php-format
+msgid "Seperate %s with commas"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:442
+#, php-format
+msgid "Add or remove %s"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:443
+#, php-format
+msgid "Choose from most used %s"
+msgstr "انتخاب از بیشتر استفاده شده ها"
+
+#: includes/library/class-wplman-post-type-generator.php:592
+#, php-format
+msgid "No %s"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:680
+#, fuzzy, php-format
+#| msgid "Show all"
+msgid "Show all %s"
+msgstr "نمایش همه"
+
+#: includes/library/class-wplman-post-type-generator.php:866
+#: includes/library/class-wplman-post-type-generator.php:869
+#: includes/library/class-wplman-post-type-generator.php:871
+#, php-format
+msgid "%s updated."
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:867
+msgid "Custom field updated."
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:868
+msgid "Custom field deleted."
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:870
+#, php-format
+msgid "%2$s restored to revision from %1$s"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:872
+#, fuzzy, php-format
+#| msgid "Settings saved."
+msgid "%s saved."
+msgstr "تنظیمات ذخیره شد‫."
+
+#: includes/library/class-wplman-post-type-generator.php:873
+#, php-format
+msgid "%s submitted."
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:875
+#, php-format
+msgid "%2$s scheduled for: <strong>%1$s</strong>."
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:876
+msgid "M j, Y @ G:i"
+msgstr ""
+
+#: includes/library/class-wplman-post-type-generator.php:879
+#, php-format
+msgid "%s draft updated."
+msgstr "اطلاعات بروزرسانی شد"
+
+#: includes/library/wplman-helpers.php:11
+msgid "All Groups"
+msgstr ""
+
+#: includes/library/wplman-helpers.php:17
+msgid "Filter"
+msgstr ""
+
+#: includes/wplman-metafields.php:7
+msgid "Short link data"
+msgstr "اطلاعات لینک کوتاه"
+
+#: includes/wplman-metafields.php:13
+msgid "This text only show in admin area"
+msgstr "این متن فقط در داشبورد مدیریت دیده می شود"
+
+#: includes/wplman-metafields.php:16
+msgid "Destination URL"
+msgstr "لینک مقصد"
+
+#: includes/wplman-metafields.php:23
+msgid "Target"
+msgstr "هدف"
+
+#: includes/wplman-metafields.php:27
+msgid "Open in new tab"
+msgstr "بازشدن در پنجره جدید"
+
+#: includes/wplman-metafields.php:28
+msgid "Open in same tab"
+msgstr "باز شدن در پنجره جاری"
+
+#: includes/wplman-metafields.php:33
+msgid "Redirect Type"
+msgstr "نوع ریدایرکت"
+
+#: includes/wplman-metafields.php:37
+msgid "Permanent 301"
+msgstr "دائمی ۳۰۱"
+
+#: includes/wplman-metafields.php:38
+msgid "Temporary 302"
+msgstr "موقت ۳۰۲"
+
+#: includes/wplman-metafields.php:43
+msgid "Nofollow attribute"
+msgstr "ویژگی Nofollow"
+
+#: includes/wplman-metafields.php:47
+msgid "Add Nofollow attribute"
+msgstr "افزودن Nofollow به لینک"
+
+#: includes/wplman-metafields.php:48
+msgid "Do not add Nofollow attribute"
+msgstr "بدون Nofollow"
+
+#~ msgid "All Categories"
+#~ msgstr "همه دسته بندی ها"
+
+#~ msgid "Search in shop..."
+#~ msgstr "جستجو در فروشگاه‫…"
+
+#~ msgid "for using all features of Minapp Woocommerce plugin must be installed!"
+#~ msgstr "برای اجرای افزونه اپ ساز مینپ لازم است افزونه ووکامرس را نصب کنید!"
+
+#~ msgid "edit this text form Minapp dashboard"
+#~ msgstr "این متن را از داشبورد مینپ ویرایش کنید‫."
+
+#~ msgid "Download and install our Android application from %s"
+#~ msgstr "اپلیکیشن اندروید ما را از لینک زیر دانلود کنید %s"
+
+#~ msgid "Contact us by below form"
+#~ msgstr "توسط فرم زیر می توانید با ما تماس بگیرید"
+
+#~ msgid "New Products"
+#~ msgstr "محصولات جدید"
+
+#~ msgid "Most sells Products"
+#~ msgstr "محصولات پر فروش"
+
+#~ msgid "Minapp - Content for Mobile Application"
+#~ msgstr "مینپ ‫-‬ محتوای سفارشی اپلیکیشن"
+
+#~ msgid "Content for App"
+#~ msgstr "محتوای سفارشی برای نمایش در اپلیکیشن"
+
+#~ msgid "Show this content in App, instead of main content!"
+#~ msgstr "این محتوا به جای محتوای اصلی در اپلیکیشن نمایش داده شود‫!"
+
+#~ msgid "Application Notices"
+#~ msgstr "اعلان های اپلیکیشن"
+
+#~ msgid "Notice"
+#~ msgstr "اعلان"
+
+#~ msgid "Notices"
+#~ msgstr "اعلان ها"
+
+#~ msgid "Show Notice"
+#~ msgstr "نمایش اعلان"
+
+#~ msgid "Add New Notice"
+#~ msgstr "افزودن اعلان جدید"
+
+#~ msgid "App Notice"
+#~ msgstr "اعلان در اپلیکیشن"
+
+#~ msgid "External link"
+#~ msgstr "لینک به خارج"
+
+#~ msgid "Post, Page or Product"
+#~ msgstr "نوشته برگه یا محصول"
+
+#~ msgid "Archives like category or tag"
+#~ msgstr "ارشیو مثلا دسته بندی یا برچسب"
+
+#~ msgid "Application"
+#~ msgstr "اپلیکیشن"
+
+#~ msgid "Select an action"
+#~ msgstr "یک عملکرد انتخاب کنید"
+
+#~ msgid "External Link"
+#~ msgstr "لینک به خارج"
+
+#~ msgid "Choose Post"
+#~ msgstr "انتخاب نوشته"
+
+#~ msgid "Choose Archive"
+#~ msgstr "انتخاب آرشیو"
+
+#~ msgid "Choose from Archives like Category, Tag,..."
+#~ msgstr "انتخاب یک آرشیو مثلا دسته بندی ‫…"
+
+#~ msgid "About Page"
+#~ msgstr "صفحه درباره"
+
+#~ msgid "Contact Page"
+#~ msgstr "صفحه تماس"
+
+#~ msgid "FAQ"
+#~ msgstr "سوالات متداول"
+
+#~ msgid "Intro slides"
+#~ msgstr "اسلاید های معرفی اپلیکیشن"
+
+#~ msgid "Application pages"
+#~ msgstr "صفحات اپلیکیشن"
+
+#~ msgid "Select a page ..."
+#~ msgstr "انتخاب یک برگه ‫…"
+
+#~ msgid "Choose from Pages that defined in application"
+#~ msgstr "انتخاب از صفحاتی که در اپلیکیشن تعریف شده اند"
+
+#~ msgid "No data!"
+#~ msgstr "هیچ اطلاعاتی برای نمایش وجود ندارد‫!"
+
+#~ msgid "Weight"
+#~ msgstr "وزن"
+
+#~ msgid "Dimensions"
+#~ msgstr "ابعاد"
+
+#~ msgid "<strong>ERROR</strong>: Enter a username or email address."
+#~ msgstr "<strong>خطا</strong>: یک نام کاربری یا ایمیل وارد کنید‫."
+
+#~ msgid "<strong>ERROR</strong>: There is no account with that username or email address."
+#~ msgstr "<strong>خطا</strong>: حساب کاربری با این نام کاربری یا ایمیل پیدا نشد‫!‫."
+
+#~ msgid "Someone has requested a password reset for the following account:"
+#~ msgstr "ما یک درخواست تغییر رمز عبور برای حساب کاربری زیر دریافت کرده ایم‫:"
+
+#~ msgid "Site Name: %s"
+#~ msgstr "عنوان سایت‫:‬ %s"
+
+#~ msgid "Username: %s"
+#~ msgstr "نام کاربری‫:‬ %s"
+
+#~ msgid "If this was a mistake, just ignore this email and nothing will happen."
+#~ msgstr "اگر این درخواست از طرف شما نبوده است این ایمیل را نادیده بگیرید‫."
+
+#~ msgid "To reset your password, visit the following address:"
+#~ msgstr "برای تنظیم مجدد رمز عبور روی لینک زیر کلیک کنید‫‫:"
+
+#~ msgid "[%s] Password Reset"
+#~ msgstr "[%s] تنظیم مجدد رمز عبور"
+
+#~ msgid "The email could not be sent. Possible reason: your host may have disabled the mail() function."
+#~ msgstr "امکان ارسال ایمیل وجود ندارد‫.‬ هاست شما این قابلیت را پشتیبانی نمی کند‫."
+
+#~ msgid "Minapp Settings"
+#~ msgstr "تنظیمات مینپ"
+
+#~ msgid "Minapp"
+#~ msgstr "مینپ"
+
+#~ msgid "Minapp Build Android application"
+#~ msgstr "ایجاد نسخه اندروید اپلیکیشن"
+
+#~ msgid "Build Android"
+#~ msgstr "ایجاد نسخه اندروید"
+
+#~ msgid "Minapp Help"
+#~ msgstr "راهنمای مینپ"
+
+#~ msgid "Help"
+#~ msgstr "آموزش و راهنمایی"
+
+#~ msgid "General Configs"
+#~ msgstr "پیکربندی ها"
+
+#~ msgid "Layout Builder"
+#~ msgstr "چیدمان صفحات"
+
+#~ msgid "Delete Section"
+#~ msgstr "حذف بلاک"
+
+#~ msgid "Are you sure to delete this section?"
+#~ msgstr "برای حذف این بلاک مطمئن هستید؟"
+
+#~ msgid "Layout will be empty"
+#~ msgstr "چیدمان صفحه خالی می ماند"
+
+#~ msgid "Delete Slide"
+#~ msgstr "حذف اسلاید"
+
+#~ msgid "You can not delete all slides!"
+#~ msgstr "اسلایدر حداقل یک اسلاید باید داشته باشد‫!"
+
+#~ msgid "you must accept terms before!"
+#~ msgstr "شما باید قبل از شروع گزینه اول را تایید کنید‫!"
+
+#~ msgid "Reset settings completed."
+#~ msgstr "تنظیم مجدد پیکربندی پلاگین با موفقیت انجام شد‫."
+
+#~ msgid "Import settings completed."
+#~ msgstr "پیکربندی ها با موفقیت برون ریزی شدند‫."
+
+#~ msgid "Please select a file before clicking"
+#~ msgstr "لطفا قبل از کلیک یک فایل انتخاب کنید"
+
+#~ msgid "This browser doesn't seem to support the `files` property of file inputs."
+#~ msgstr "مرورگر شما این ویژگی را پشتیبانی نمی کند‫.‬ لطفا آن را به آخرین نسخه ارتقاء دهید‫."
+
+#~ msgid "Select a Post"
+#~ msgstr "یک پست انتخاب کنید"
+
+#~ msgid "Select a Taxonomy"
+#~ msgstr "یک آرشیو انتخاب کنید"
+
+#~ msgid "Select an Icon"
+#~ msgstr "یک آیکن انتخاب کنید"
+
+#~ msgid "FAQ page content"
+#~ msgstr "محتوای صفحه سوالات متداول"
+
+#~ msgid "Rules"
+#~ msgstr "قوانین و مقررات"
+
+#~ msgid "Rules page content"
+#~ msgstr "محتوای صفحه قوانین و مقررات"
+
+#~ msgid "Contact Text"
+#~ msgstr "متن صفحه تماس"
+
+#~ msgid "this text show top of contact form on app"
+#~ msgstr "این متن بالای فرم تماس در اپلیکیشن نمایش داده می شود"
+
+#~ msgid "Share Application Text"
+#~ msgstr "متن اشتراک اپلیکیشن"
+
+#~ msgid "General"
+#~ msgstr "عمومی"
+
+#~ msgid "Content"
+#~ msgstr "محتوا"
+
+#~ msgid "click on below button will remove all your settings and not recyclable, I know it!"
+#~ msgstr "کلیک روی دکمه زیر همه تنظیمات فعلی را حذف می کند‫.‬ حتما قبل از این کار یک فایل پشتیبان تهیه کنید‫‫!"
+
+#~ msgid "Make your own configurations at your suggestion"
+#~ msgstr "تنظیمات پیشنهادی را برای من انجام بده"
+
+#~ msgid "Reset all Minapp settings"
+#~ msgstr "تنظیم مجدد همه تنظیمات فعلی پلاگین"
+
+#~ msgid "All configurations export as json file."
+#~ msgstr "همه پیکربندی ها در قالب یک فایل json به شما داده می شود‫."
+
+#~ msgid "Export settings"
+#~ msgstr "برون بری پیکربندی ها"
+
+#~ msgid "Import last exported json file.<strong> All current settings will be removed.</strong>"
+#~ msgstr "درون ریزی فایل json که قبلا از همین قسمت دریافت کرده اید‫.‬ <strong> توجه‫:‬ کلیه تنظیمات فعلی حذف خواهند شد‫!‬</strong>"
+
+#~ msgid "Import settings"
+#~ msgstr "درون ریزی پیکربندی ها"
+
+#~ msgid "Post Types"
+#~ msgstr "پست تایپ ها"
+
+#~ msgid "Select witch post types use in app"
+#~ msgstr "پست تایپ هایی که نمی خواهید از آنها در اپلیکیشن استفاده شود مشخص کنید"
+
+#~ msgid "Select witch product attribute use as filter"
+#~ msgstr "کدام یک از ویژگی های محصول به عنوان فیلتر در اپلیکیشن استفاده شود؟"
+
+#~ msgid "product filters"
+#~ msgstr "فیلترهای محصولات"
+
+#~ msgid "Select witch ones use as filter"
+#~ msgstr "کدام یک ازموارد به عنوان فیلتر محصولات استفاده شود؟"
+
+#~ msgid "Thumbnail Size"
+#~ msgstr "ابعاد تصویر شاخص"
+
+#~ msgid "Select Size of thumbnail in app"
+#~ msgstr "انتخاب سایز تصویر شاخص در اپلیکیشن"
+
+#~ msgid "Post date format"
+#~ msgstr "فرمت نمایش تاریخ"
+
+#~ msgid "Use Date/Time standard format."
+#~ msgstr "از فرمت استاندارد تاریخ در PHP استفاده کنید‫."
+
+#~ msgid "Support email"
+#~ msgstr "ایمیل پشتیبانی"
+
+#~ msgid "Support tickets send to this email."
+#~ msgstr "ایمیل تیکت های پشتیبانی به این آدرس ایمیل فرستاده می شود‫."
+
+#~ msgid "Select at least one Post type"
+#~ msgstr "حداقل یک پست تایپ باید انتخاب کنید"
+
+#~ msgid "in Stock"
+#~ msgstr "موجود در انبار"
+
+#~ msgid "Virtual Product"
+#~ msgstr "محصول مجازی"
+
+#~ msgid "On sale"
+#~ msgstr "فروش ویژه"
+
+#~ msgid "Select at least one Size"
+#~ msgstr "حداقل یک سایز برای تصویر شاخص انتخاب کنید‫"
+
+#~ msgid "Post DAte Format can not be blank!"
+#~ msgstr "فرمت تاریخ نمی تواند خالی باشد‫!"
+
+#~ msgid "Email not valid"
+#~ msgstr "ایمیل نامعتبر است‫"
+
+#~ msgid "Image"
+#~ msgstr "عکس"
+
+#~ msgid "Add image with action"
+#~ msgstr "افزودن یک عکس با عملکرد متنوع"
+
+#~ msgid "This title displays instead of archive name"
+#~ msgstr "این عنوان به جای عنوان پیش فرض نمایش داده می شود"
+
+#~ msgid "Show Title"
+#~ msgstr "نمایش عنوان"
+
+#~ msgid "Home page"
+#~ msgstr "صفحه اصلی اپلیکیشن"
+
+#~ msgid "Collection page"
+#~ msgstr "صفحه دسته بندی های اپلیکیشن"
+
+#~ msgid "Save settings"
+#~ msgstr "ذخیره تنظیمات"
+
+#~ msgid "Collection Page Builder"
+#~ msgstr "چیدمان صفحه دسته بندی اپلیکیشن"
+
+#~ msgid "add items, and sort theme."
+#~ msgstr "افزودن و مرتب سازی آیتم ها‫."
+
+#~ msgid "Drag a Block here to start design <strong>Collection page</strong> layout"
+#~ msgstr "برای چیدمان <strong>صفحه دسته بندی ها</strong> یک بلاک را به اینجا بکشی"
+
+#~ msgid "Drag a Block here to start design Collection page layout"
+#~ msgstr "برای چیدمان صفحه دسته بندی ها یک بلاک را به اینجا بکشید"
+
+#~ msgid "Headline"
+#~ msgstr "سرتیتر"
+
+#~ msgid "Use to show bold title between blocks"
+#~ msgstr "برای نمایش یک سرتیتر درشت در بین بلاک ها"
+
+#~ msgid "Display text"
+#~ msgstr "متن نمایشی"
+
+#~ msgid "Type every things..."
+#~ msgstr "هر چیزی میخوای بنویس‫…"
+
+#~ msgid "Alignment"
+#~ msgstr "چیدمان"
+
+#~ msgid "Posts"
+#~ msgstr "نوشته ها"
+
+#~ msgid "Show a list of the Posts"
+#~ msgstr "نمایش یک لیست سفارشی از نوشته ها"
+
+#~ msgid "Title above list"
+#~ msgstr "عنوان بالای لیست"
+
+#~ msgid "EX: Last blog posts..."
+#~ msgstr "مثلا‫:‬ جدیدترین پست های وبلاگ‫…"
+
+#~ msgid "Show View all link"
+#~ msgstr "نمایش لینک نمایش بیشتر"
+
+#~ msgid "Number of item to show"
+#~ msgstr "تعداد آیتم ها برای نمایش"
+
+#~ msgid "Sort by"
+#~ msgstr "مرتب سازی بر اساس"
+
+#~ msgid "Newest"
+#~ msgstr "جدیدترین"
+
+#~ msgid "Most Commented"
+#~ msgstr "پر بحث ترین ها"
+
+#~ msgid "Choose a Category or Tag"
+#~ msgstr "انتخاب یک دسته بندی یا برچسب"
+
+#~ msgid "Products"
+#~ msgstr "محصولات"
+
+#~ msgid "Show a list of the Products"
+#~ msgstr "نمایش لیست سفارشی از محصولات"
+
+#~ msgid "You must install and activate"
+#~ msgstr "شما باید نصب و فعال کنید"
+
+#~ msgid "Woocommerce"
+#~ msgstr "ووکامرس"
+
+#~ msgid "for using this module!"
+#~ msgstr "برای استفاده از این ماژول ‫!"
+
+#~ msgid "Price - low to high"
+#~ msgstr "ارزان ترین"
+
+#~ msgid "Price - high to low"
+#~ msgstr "گران ترین"
+
+#~ msgid "Highest rated"
+#~ msgstr "بالاترین امتیاز"
+
+#~ msgid "Choose from Archives like Product Category, Product Tag,..."
+#~ msgstr "آرشیوها، مثلا دسته یا برچسب محصول‫…"
+
+#~ msgid "Slider"
+#~ msgstr "اسلایدر"
+
+#~ msgid "Add Slider with action"
+#~ msgstr "افزودن اسلایدر با عملکرد متنوع"
+
+#~ msgid "App Home Page Builder"
+#~ msgstr "چیدمان صفحه اصلی اپلیکیشن"
+
+#~ msgid "add blocks, config and sort theme."
+#~ msgstr "افزودن، پیکربندی و مرتب سازی بلاک ها‫."
+
+#~ msgid "Drag a Block here to start design Home layout"
+#~ msgstr "برای چیدمان صفحه اصلی یک بلاک را به اینجا بکشید"
+
+#~ msgid "Visit Chart"
+#~ msgstr "نمودار بازدید"
+
+#~ msgid "Summary"
+#~ msgstr "خلاصه"
+
+#~ msgid "Phone"
+#~ msgstr "تلفن"
+
+#~ msgid "Email"
+#~ msgstr "ایمیل"
+
+#~ msgid "invalid user login"
+#~ msgstr "این کاربر وجود ندارد"
+
+#~ msgid "invalid user"
+#~ msgstr "این کاربر وجود ندار"
+
+#~ msgid "password changed"
+#~ msgstr "رمز عبور با موفقیت تغییر کرد"
+
+#~ msgid "old password is not correct"
+#~ msgstr "رمز عبور قبلی نادرست است"
+
+#~ msgid "Phone Number"
+#~ msgstr "شماره تلفن"
+
+#~ msgid "Ticket From App"
+#~ msgstr "تیکت از اپلیکیشن"
+
+#~ msgid "email was sent"
+#~ msgstr "ایمیل ارسال شد"
+
+#~ msgid "email not sent!"
+#~ msgstr "ایمیل ارسال نشد‫!"
+
+#~ msgid "Price"
+#~ msgstr "قیمت"
+
+#~ msgid "Downloadable Products"
+#~ msgstr "محصولات دانلودی"
+
+#~ msgid "You must choose a theme"
+#~ msgstr "شما باید یک پوسته انتخاب کنید"
+
+#~ msgid "All fields required!"
+#~ msgstr "همه فیلدهای اجباری است‫!"
+
+#~ msgid "Application logo and Application Icon must be in PNG format"
+#~ msgstr "لوگو و آیکن اپلیکینش باید به فرمت png باشند"

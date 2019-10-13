@@ -31,7 +31,10 @@ class Wplman_Dashboard_Scripts{
 			/**
 			 * add style data (rtl css file)
 			 */
-			wp_style_add_data('wplman-rtl', 'rtl', 'replace');
+			if(is_rtl()){
+				wp_enqueue_style( 'wplman-rtl',     WPLMAN_URL . 'assets/css/wplman-rtl.css',             '',WPLMAN_VERSION, 'all' );
+			}
+
 
 
 			/**

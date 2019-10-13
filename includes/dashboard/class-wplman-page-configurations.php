@@ -19,7 +19,7 @@ class Wplman_Configurations_Page extends Wplman_Field_Generator {
 		 */
 		add_settings_section(
 			'main_section_id',
-			__( '', WPLMAN_TEXTDOMAIN),
+			__( 'null', WPLMAN_TEXTDOMAIN),
 			array( $this , 'header_display_markup' ),
 			'wplman-configurations'
 		);
