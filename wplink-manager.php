@@ -120,7 +120,7 @@ class WpLinkManager{
 		 *
 		 */
 		if ( is_admin() ) {
-			require_once dirname( __FILE__ ) . '/includes/Wplman_MetaFields.php';
+			require_once dirname( __FILE__ ) . '/includes/wplman-metafields.php';
 			require_once dirname( __FILE__ ) . '/includes/class-wplman-ajax.php';
 			require_once dirname( __FILE__ ) . '/includes/wplman-dashboard.php';
 		}else{
@@ -136,8 +136,8 @@ class WpLinkManager{
 		 * - Checks before installing plugin [dependencies]
 		 */
 		require_once dirname( __FILE__ ) . '/includes/library/wplman-helpers.php';
-		require_once dirname( __FILE__ ) . '/includes/library/Wplman_Dependencies.php';
-		require_once dirname( __FILE__ ) . '/includes/Wplman_PostType.php';
+		require_once dirname( __FILE__ ) . '/includes/library/class-wplman-dependencies.php';
+		require_once dirname( __FILE__ ) . '/includes/wplman-post-type.php';
 		require_once dirname( __FILE__ ) . '/includes/class-wplman-redirect.php';
 		require_once dirname( __FILE__ ) . '/includes/class-wplman-frontend.php';
 	}
