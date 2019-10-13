@@ -37,20 +37,16 @@ class Wplman_Frontend{
 
         <div id="wplman-list-shortlinks-frontend">
 			<form id="shortlink-posts-filter">
-				<p class="search-box">
-					<label class="screen-reader-text" for="post-search-input">Search Short links:</label>
-					<input type="search" id="post-search-input" name="s" value="">
-					<input type="submit" id="search-submit" class="button" value="Search Short links">
-				</p>
+				<div class="search-box">
+					<input type="search" id="post-search-input" name="s" placeholder="<?php _e('Search ...', WPLMAN_TEXTDOMAIN);?>">
+				</div>
 
-				<div class="tablenav top">
+				<div class="nav-box">
 					<div class="alignleft actions">
 
 						<?php wplman_dropdown_shortlink_groups();?>
 
 					</div>
-
-
 
 					<div class="tablenav-pages" id="pagination-shortlinks">
 						<!-- Ajax pagination placed here -->

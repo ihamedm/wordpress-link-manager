@@ -1,0 +1,109 @@
+#wplman-list-shortlinks-frontend table {
+    margin: 25px auto;
+    border-collapse: collapse;
+    border: 1px solid #eee;
+    border-bottom: 2px solid #00cccc;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1), 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 20px 20px rgba(0, 0, 0, 0.05), 0px 30px 20px rgba(0, 0, 0, 0.05);
+}
+#wplman-list-shortlinks-frontend table tr:hover {
+    background: #f4f4f4;
+}
+#wplman-list-shortlinks-frontend table tr:hover td {
+    color: #555;
+}
+#wplman-list-shortlinks-frontend table th, table td {
+    color: #999;
+    border: 1px solid #eee;
+    padding: 12px 35px;
+    border-collapse: collapse;
+}
+#wplman-list-shortlinks-frontend table th {
+    background: #00cccc;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+#wplman-list-shortlinks-frontend table th.last {
+    border-right: none;
+}
+
+#wplman-list-shortlinks-frontend #mask{
+    display: none;
+}
+#wplman-list-shortlinks-frontend.busy #mask{
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(255,255,255,0.9);
+    text-align: center;
+    padding: 10% 0;
+    box-sizing: border-box;
+}
+#wplman-list-shortlinks-frontend #mask> div.loading-msg{
+    margin: 0 auto;
+    text-align: center;
+}
+#wplman-list-shortlinks-frontend #mask span{
+    float: none !important;
+}
+
+
+#wplman-list-shortlinks-frontend .search-box{
+    float: right;
+}
+#wplman-list-shortlinks-frontend .search-box>input{
+    height: 40px;
+    padding: 0 10px;
+    margin: 0;
+    line-height: normal;
+    box-sizing: border-box;
+    border-radius: 100px;
+    box-shadow: none;
+    border: 1px solid #00cccc;
+    outline: none;
+}
+#wplman-list-shortlinks-frontend .nav-box{
+}
+#wplman-list-shortlinks-frontend #shortlink-posts-filter{
+    margin-bottom: 30px;
+}
+#wplman-list-shortlinks-frontend #shortlink-posts-filter #post-query-submit,
+#wplman-list-shortlinks-frontend #shortlink-posts-filter .nav-box select{
+    height: 40px;
+    outline: none;
+    box-sizing: border-box;
+    border-radius: 40px;
+}
+#wplman-list-shortlinks-frontend #shortlink-posts-filter .nav-box input#post-query-submit{
+    margin-left: 10px;
+    background: #00cccc;
+    color: #fff;
+    border:none;
+    box-shadow: none;
+    line-height: 11px;
+}
+
+.tablenav-pages{
+    font-size: 12px;
+    color: #666;
+}
+.tablenav-pages .button{
+    background: #fff;
+    color: #00cccc;
+    width: 30px;
+    height: 30px;
+    padding: 0;
+    text-align: center;
+    border-radius: 40px;
+    border:1px solid #00cccc;
+    display: inline-block;
+    font-size: 22px;
+}
+.tablenav-pages .button:hover{
+    background: #00cccc;
+    color: #fff;
+}
+.tablenav-pages .button.disabled{
+    opacity: 0.2;
+}
