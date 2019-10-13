@@ -72,3 +72,20 @@
     border: solid 1px #ddd;
     background-color: #fdfdfd;
 }
+#shortlink-edit-form .form-table td{
+    text-align: left;
+}
+#shortlink-edit-form .form-table input[type=text],
+#shortlink-edit-form .form-table input[type=url],
+#shortlink-edit-form .form-table textarea{
+    width: 100%;
+    box-sizing: border-box;
+}
+#shortlink-edit-form .form-table label{
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#shortlink-datail{
+    text-align: left;
+}

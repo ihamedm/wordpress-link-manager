@@ -93,7 +93,7 @@ class Wplman_Ajax {
             <input name="ID" value="<?php echo $shortlink['ID'];?>" type="hidden">
             <input name="post_type" value="shortlink" type="hidden">
             <input name="post_status" value="publish" type="hidden">
-        <table class="form-table widefat" id="post">
+        <table class="form-table" id="post">
             <tbody>
                 <tr>
                     <th>
@@ -189,9 +189,16 @@ class Wplman_Ajax {
                 </tr>
 
             </tbody>
+            <tfoot>
+            <tr>
+                <td>
+                    <button type="submit" class="button button-primary button-hero"><?php _e('Save date', WPLMAN_TEXTDOMAIN);?></button>
+                </td>
+            </tr>
+
+            </tfoot>
         </table>
 
-            <button type="submit" class="button button-primary button-hero"><?php _e('Save date', WPLMAN_TEXTDOMAIN);?></button>
 
         </form>
 
@@ -271,6 +278,7 @@ class Wplman_Ajax {
         <?php
         die();
     }
+
 
 	public function wplman_shortlink_list(){
 		$query = $this->make_query($_GET['query_data']);
@@ -385,11 +393,12 @@ class Wplman_Ajax {
 			    'redirect_type' => $shortlink_meta['shortlink_redirect_type'][0],
 			    'nofollow'      => $shortlink_meta['shortlink_nofollow'][0],
 		    ));
-
+            echo '<div id="shortlink-datail">';
 		    foreach($shortlink as $key => $value ){
 		        echo '<p><strong>'.$key.'  :</strong> '.$value.'</p>';
             }
 		    echo '<a href="'.get_permalink($shortlink['ID']).'" target="_blank">'.get_permalink($shortlink['ID']).'</a>';
+		    echo '<div>';
 	    }
         die();
     }
