@@ -59,3 +59,12 @@
 #shortlink-edit-form.busy .mask{
     display: block;
 }
+
+.link-group-wrap{
+    min-height: 42px;
+    max-height: 200px;
+    overflow: auto;
+    padding: 0 .9em;
+    border: solid 1px #ddd;
+    background-color: #fdfdfd;
+}

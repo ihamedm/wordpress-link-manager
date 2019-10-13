@@ -24,6 +24,7 @@ jQuery(document).ready(function() {
 
             var value;
 
+
             if (field.value === 'true') {
                 value = true;
             } else if (field.value === 'false') {
@@ -38,6 +39,16 @@ jQuery(document).ready(function() {
 
             formData[field.name] = value
         });
+
+        var link_groups_arr = [];
+        // handle multi checkbox
+        $("input:checkbox[name='link_group[]']:checked").each(function(){
+            link_groups_arr.push($(this).val());
+        });
+
+        formData['link_group'] = link_groups_arr
+
+        console.log(formData)
 
         return formData
     }

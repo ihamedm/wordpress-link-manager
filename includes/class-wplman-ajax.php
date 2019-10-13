@@ -134,6 +134,30 @@ class Wplman_Ajax {
 
                 <tr>
                     <th>
+                        <label for="link_group">Short link group</label>
+                    </th>
+                    <td>
+                        <div class="link-group-wrap">
+                            <ul class="categorychecklist form-no-clear">
+                            <?php
+                            $all_terms = get_terms('link_group', array('hide_empty' => 0));
+                            $post_term_ids = wp_get_post_terms($post->ID, 'link_group', array('fields' => 'ids'));
+
+                            foreach($all_terms as $term){
+                                $checked = (in_array($term->term_id,$post_term_ids)) ? 'checked' : '';
+                                echo '<li><label><input type="checkbox" name="link_group[]" value="'.$term->term_id.'" '.$checked.'>'.$term->name.'</label></li>';
+                            }
+                            ?>
+                            </ul>
+                         </div>
+                        <a target="_blank" href="<?php echo admin_url('edit-tags.php?taxonomy=link_group&post_type=shortlink');?>" title="<?php _e('Add New', WPLMAN_TEXTDOMAIN);?>">
+                            <span class="dashicons dashicons-plus"></span><?php _e('Add new link group', WPLMAN_TEXTDOMAIN);?>
+                        </a>
+                    </td>
+                </tr>
+
+                <tr>
+                    <th>
                         <label for="shortlink_target">Target</label>
                     </th>
                     <td>
@@ -166,7 +190,6 @@ class Wplman_Ajax {
         </table>
 
             <button type="submit" class="button button-primary button-hero"><?php _e('Save date', WPLMAN_TEXTDOMAIN);?></button>
-
 
         </form>
 
@@ -226,8 +249,8 @@ class Wplman_Ajax {
 
 	public function wplman_pagnation_form(){
 		$query = $this->make_query($_GET['query_data']);
-		$current_page = (isset($_GET['query_data']) && (int) $_GET['query_data']['paged'] > 0) ? (int) $_GET['query_data']['paged'] : 1;
 		$max_page = ($query->max_num_pages > 0 ) ? $query->max_num_pages : 1;
+		$current_page = (isset($_GET['query_data']) && (int) $_GET['query_data']['paged'] > 0 && (int) $_GET['query_data']['paged'] <= $max_page) ? (int) $_GET['query_data']['paged'] : 1;
 		$prev_disabled = ($current_page == 1) ? 'disabled' : '';
 		$next_disabled = ($current_page == $max_page) ? 'disabled' : '';
 	?>
@@ -326,6 +349,13 @@ class Wplman_Ajax {
 			    update_post_meta($form_data['ID'], $key, $value);
 		    }
 	    }
+
+	    if(isset($form_data['link_group']) && is_array($form_data['link_group'])){
+		    wp_set_post_terms($form_data['ID'], $form_data['link_group'], 'link_group');
+        }else{
+		    wp_set_object_terms($form_data['ID'], NULL, 'link_group');
+        }
+
 
         echo '<div class="notice notice-success notice-alt"><p>'.__('Update shortlink was successful.').'</p></div>';
 	    die();

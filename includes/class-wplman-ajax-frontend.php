@@ -58,11 +58,6 @@ class Wplman_Ajax_Frontend {
 			<tr id="shortlink-<?php the_ID();?>" data-id="<?php the_ID();?>" class="shortlink">
 				<td>
 					<strong>#<?php the_ID();?> - <?php the_title();?></strong>
-					<div class="row-actions">
-						<span class="wplman-detail"><a href="#"><?php _e('Detail', WPLMAN_TEXTDOMAIN);?></a> | </span>
-						<span class="wplman-edit"><a href="#"><?php _e('Edit', WPLMAN_TEXTDOMAIN);?></a> | </span>
-						<span class="wplman-trash trash"><a href="#" class="submitdelete"><?php _e('Trash', WPLMAN_TEXTDOMAIN);?></a></span>
-					</div>
 				</td>
 
 				<td>
@@ -95,8 +90,8 @@ class Wplman_Ajax_Frontend {
 
 	public function wplman_pagnation_form_frontend_callback(){
 		$query = $this->make_query($_GET['query_data']);
-		$current_page = (isset($_GET['query_data']) && (int) $_GET['query_data']['paged'] > 0) ? (int) $_GET['query_data']['paged'] : 1;
 		$max_page = ($query->max_num_pages > 0 ) ? $query->max_num_pages : 1;
+		$current_page = (isset($_GET['query_data']) && (int) $_GET['query_data']['paged'] > 0 && (int) $_GET['query_data']['paged'] <= $max_page) ? (int) $_GET['query_data']['paged'] : 1;
 		$prev_disabled = ($current_page == 1) ? 'disabled' : '';
 		$next_disabled = ($current_page == $max_page) ? 'disabled' : '';
 		?>
