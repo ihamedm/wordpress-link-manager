@@ -25,24 +25,24 @@ class Wplman_Configurations_Page extends Wplman_Field_Generator {
 		);
 
 
-
-		/**
-		 * Second - Create fields for section
-		 */
-		add_settings_field(
-			'about_text',
-			__( 'About text', WPLMAN_TEXTDOMAIN),
-			array($this , 'about_text_callback'),
-			'wplman-configurations',
-			'main_section_id',
-			array(
-				'type' => 'editor',
-				'name' => WPLMAN_PREFIX.'about_text',
-				'description' => __( 'Text that show in app about page.', WPLMAN_TEXTDOMAIN)
-			)
-		);
-		register_setting(WPLMAN_PREFIX.'main_configs', WPLMAN_PREFIX.'about_text', array($this, 'about_validate_callback'));
-
+//
+//		/**
+//		 * Second - Create fields for section
+//		 */
+//		add_settings_field(
+//			'about_text',
+//			__( 'About text', WPLMAN_TEXTDOMAIN),
+//			array($this , 'about_text_callback'),
+//			'wplman-configurations',
+//			'main_section_id',
+//			array(
+//				'type' => 'editor',
+//				'name' => WPLMAN_PREFIX.'about_text',
+//				'description' => __( 'Text that show in app about page.', WPLMAN_TEXTDOMAIN)
+//			)
+//		);
+//		register_setting(WPLMAN_PREFIX.'main_configs', WPLMAN_PREFIX.'about_text', array($this, 'about_validate_callback'));
+//
 
 
 
