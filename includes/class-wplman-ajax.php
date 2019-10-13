@@ -11,6 +11,8 @@ class Wplman_Ajax {
 		add_action('wp_ajax_wplman_add_form_shortlink',             array($this , 'wplman_add_form_shortlink'));
 		add_action('wp_ajax_wplman_save_shortlink',                 array($this , 'wplman_save_shortlink'));
 
+		add_action('wp_ajax_tb_test',                 array($this , 'tb_test'));
+
 	}
 
 	/**
@@ -202,6 +204,56 @@ class Wplman_Ajax {
     /**
 	 * Ajax methods
 	 */
+
+    public function tb_test(){
+	    ?>
+        <form id="wplman-insert-shortlink-form">
+            <select name="shortlink_id">
+                <option value=""><?php _e('Choose a shortlink', WPLMAN_TEXTDOMAIN);?></option>
+            <?php
+            $shortlinks_query = new WP_Query(array('post_type' => 'shortlink'));
+                if($shortlinks_query->have_posts()) : while($shortlinks_query->have_posts()) : $shortlinks_query->the_post();
+                echo '<option value="'.get_the_ID().'">'.get_the_title().'</option>';
+                endwhile;endif;wp_reset_postdata();
+            ?>
+
+            </select>
+            <label for="text">
+	            <?php _e('Optional text to replace with shortlink title', WPLMAN_TEXTDOMAIN);?>
+                <input type="text" name="text">
+            </label>
+
+            <button type="submit" class="button button-primary" disabled><?php _e('Insert shortlink', WPLMAN_TEXTDOMAIN);?></button>
+        </form>
+<a href="" target=""
+        <script type="text/javascript">
+
+            var formElement = jQuery('#wplman-insert-shortlink-form')
+
+            formElement.on('change', 'select', function(){
+                if($(this).val() !== ''){
+                    $(this).siblings('button').prop('disabled', false)
+                }
+            })
+
+            formElement.on('submit', function(event){
+                event.preventDefault()
+
+                // collect form data
+                var formData ={}
+                $.each($(this).serializeArray(), function(i, field){
+                    formData[field.name] =  field.value
+                });
+
+
+                var shortcode = '[shortlink id='+formData['shortlink_id']+' text="'+formData['text']+'"]'
+                tinyMCE.activeEditor.execCommand('mceInsertContent', 0, shortcode);
+                tb_remove();
+            })
+        </script>
+        <?php
+        die();
+    }
 
 	public function wplman_shortlink_list(){
 		$query = $this->make_query($_GET['query_data']);

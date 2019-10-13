@@ -4,6 +4,8 @@ class Wplman_Frontend{
 
 	public function __construct() {
 		add_shortcode('shortlinks_list', array($this, 'display_shortlinks_shortcode_markup'));
+		add_shortcode( 'shortlink', array( $this, 'shortlink_insert_shortcode_markup' ) );
+
 		add_action( 'wp_enqueue_scripts', array( $this , 'register_custom_frontend_assets' ) );
 
 		require_once dirname( __FILE__ ) . '/class-wplman-ajax-frontend.php';
@@ -87,5 +89,25 @@ class Wplman_Frontend{
 	<?
 	}
 
+
+
+	public function shortlink_insert_shortcode_markup($atts){
+		if(isset($atts['id'])){
+			$shortlink_meta = get_post_meta($atts['id']);
+
+			$shortlink = array(
+				'target'        => $shortlink_meta['shortlink_target'][0],
+				'nofollow'      => $shortlink_meta['shortlink_nofollow'][0],
+			);
+
+			$nofollow_attr = ($shortlink['nofollow'] == 'yes') ? 'nofollow' : '';
+			$text = ($atts['text'] == '') ? get_the_title($atts['id']) : $atts['text'];
+			$target_attr = ($shortlink['target'] == 'blank') ? 'target="_blank"' : '';
+
+			echo '<a href="'.get_permalink($atts['id']).'" '.$target_attr.'  '.$nofollow_attr.'>'.$text.'</a>';
+		}else{
+		    echo 'shortcode not defiend properly';
+        }
+	}
 }
 new Wplman_Frontend();
