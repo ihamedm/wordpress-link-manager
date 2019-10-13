@@ -1,5 +1,10 @@
 <?php
 
+/**
+ * handle redirect actions
+ *
+ * Class Wplman_Redirect
+ */
 class Wplman_Redirect{
 
 	public function __construct() {

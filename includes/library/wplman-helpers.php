@@ -1,5 +1,8 @@
 <?php
-
+/**
+ * Markup of dropdown select of link_group taxonomy terms
+ * show top of list shortlinks table
+ */
 function wplman_dropdown_shortlink_groups(){
 	$link_groups = get_terms( array(
 		'taxonomy' => 'link_group',

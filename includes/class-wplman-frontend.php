@@ -1,12 +1,19 @@
 <?php
 
+/**
+ *  - Define shortcodes
+ *  - enqueue needed script and styles for frontend
+ *  - ajax functions fro frontend
+ *
+ * Class Wplman_Frontend
+ */
 class Wplman_Frontend{
 
 	public function __construct() {
-		add_shortcode('shortlinks_list', array($this, 'display_shortlinks_shortcode_markup'));
-		add_shortcode( 'shortlink', array( $this, 'shortlink_insert_shortcode_markup' ) );
+		add_shortcode('shortlinks_list',    array($this, 'display_shortlinks_shortcode_markup'));
+		add_shortcode('shortlink',          array( $this, 'shortlink_insert_shortcode_markup' ) );
 
-		add_action( 'wp_enqueue_scripts', array( $this , 'register_custom_frontend_assets' ) );
+		add_action('wp_enqueue_scripts',        array( $this , 'register_custom_frontend_assets' ) );
 
 		require_once dirname( __FILE__ ) . '/class-wplman-ajax-frontend.php';
 
@@ -31,6 +38,10 @@ class Wplman_Frontend{
         );
 	}
 
+
+	/**
+	 * Display shortlinks list in frontend with shortcode
+	 */
 	public function display_shortlinks_shortcode_markup(){
 		?>
 

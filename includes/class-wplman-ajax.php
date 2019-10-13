@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Class Wplman_Ajax
+ * All admin ajax callbacks placed in this class
+ */
 class Wplman_Ajax {
 
 	public function __construct(){
@@ -10,15 +14,21 @@ class Wplman_Ajax {
 		add_action('wp_ajax_wplman_detail_shortlink',               array($this , 'wplman_detail_shortlink'));
 		add_action('wp_ajax_wplman_add_form_shortlink',             array($this , 'wplman_add_form_shortlink'));
 		add_action('wp_ajax_wplman_save_shortlink',                 array($this , 'wplman_save_shortlink'));
-
-		add_action('wp_ajax_insert_shortlink',                 array($this , 'insert_shortlink'));
-
+		add_action('wp_ajax_insert_shortlink',                      array($this , 'insert_shortlink'));
 	}
 
+
 	/**
-	 * @param $get
+	 * -------------------  Helper methods -------------------------
+	 */
+
+	/**
+	 *
+     * make WP_Query Obj from default parameters
+     * @param $get
 	 *
 	 * @return WP_Query
+     *
 	 */
 	public function make_query($get){
 		$args = array(
@@ -47,6 +57,12 @@ class Wplman_Ajax {
 		return $query;
 	}
 
+	/**
+     *
+     * Create form markup for edit/add shortcode
+     *
+	 * @param bool $shortlink_id
+	 */
     public function shortlink_form($shortlink_id = false){
 
 	    $shortlink = array(
@@ -209,9 +225,12 @@ class Wplman_Ajax {
 
 
     /**
-	 * Ajax methods
+	 * ------------------  Ajax methods --------------------------
 	 */
 
+	/**
+	 * Add new shortcode
+	 */
     public function insert_shortlink(){
 	    ?>
         <form id="wplman-insert-shortlink-form">
@@ -280,6 +299,9 @@ class Wplman_Ajax {
     }
 
 
+	/**
+	 * List of shortlinks show in table
+	 */
 	public function wplman_shortlink_list(){
 		$query = $this->make_query($_GET['query_data']);
 		if($query->have_posts()) : while($query->have_posts()) : $query->the_post();
@@ -324,6 +346,9 @@ class Wplman_Ajax {
 	}
 
 
+	/**
+	 * Pagination form for shortlink list table
+	 */
 	public function wplman_pagnation_form(){
 		$query = $this->make_query($_GET['query_data']);
 		$max_page = ($query->max_num_pages > 0 ) ? $query->max_num_pages : 1;
@@ -348,6 +373,9 @@ class Wplman_Ajax {
 	}
 
 
+	/**
+	 * Delete a shortlink (move to trash)
+	 */
 	public function wplman_delete_shortlink(){
 	    if(isset($_POST['post_id'])){
 		    $removed = wp_trash_post($_POST['post_id']);
@@ -363,18 +391,27 @@ class Wplman_Ajax {
     }
 
 
+	/**
+	 * Show edit form shortlink
+	 */
     public function wplman_edit_form_shortlink(){
         $this->shortlink_form((int) $_GET['shortlink_id']);
         die();
     }
 
 
+	/**
+	 * Show add form shortlink
+	 */
     public function wplman_add_form_shortlink(){
         $this->shortlink_form();
         die();
     }
 
 
+	/**
+	 * Show detail shortlink data
+	 */
     public function wplman_detail_shortlink(){
 	    if(isset($_GET['shortlink_id']) && is_numeric($_GET['shortlink_id'])){
 		    $shortlink_query = new WP_Query(array('p' => $_GET['shortlink_id'], 'post_type'=>'shortlink'));
@@ -404,6 +441,9 @@ class Wplman_Ajax {
     }
 
 
+	/**
+	 * Save shortlink data
+	 */
     public function wplman_save_shortlink(){
 	    $form_data = $_POST['form_data'];
 	    if(isset($form_data['ID']) && (int) $form_data['ID'] > 0 ){

@@ -1,4 +1,9 @@
 <?php
+/**
+ * Create metafield for shortlink post type
+ * @use meta-field-generator class
+ */
+
 include dirname( __FILE__ ) . '/library/class-wplman-meta-fields-generator.php';
 
 $shortlink_meta_args =
