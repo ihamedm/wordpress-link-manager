@@ -41,7 +41,7 @@ class Wplman_Dashboard_Pages{
 			__('Wp Link Manager About', WPLMAN_TEXTDOMAIN),
 			__('Help & Support', WPLMAN_TEXTDOMAIN),
 			'manage_options',
-			'minapp-about',
+			'wplman-about',
 			array($this, 'about_page_markup')
 		);
 
