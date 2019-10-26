@@ -24,13 +24,14 @@ jQuery(document).ready(function() {
 
             var value;
 
-
             if (field.value === 'true') {
                 value = true;
             } else if (field.value === 'false') {
                 value = false;
-            } else if (!isNaN(field.value)) {
+            } else if (!isNaN(field.value) && !(field.value == null || field.value == "") ) {
                 value = parseInt(field.value);
+            } else if( field.value == null || field.value == ""){
+                value = ""
             }
             else{
                 value = field.value
@@ -334,8 +335,6 @@ jQuery(document).ready(function() {
             'action': 'wplman_save_shortlink',
             'form_data' : get_form_data($form)
         }
-
-        console.log(get_form_data($form))
 
         $.ajax({
             type: "POST",

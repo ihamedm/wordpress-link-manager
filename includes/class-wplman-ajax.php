@@ -377,15 +377,17 @@ class Wplman_Ajax {
 	 * Delete a shortlink (move to trash)
 	 */
 	public function wplman_delete_shortlink(){
-	    if(isset($_POST['post_id'])){
+	    // validate post_id
+	    if(isset($_POST['post_id']) && is_numeric($_POST['post_id'])){
 		    $removed = wp_trash_post($_POST['post_id']);
 		    if($removed){
 		        wp_send_json_success($removed);
             }else{
+		        // post_id not valid
 		        wp_send_json_error($removed);
             }
         }else{
-		    wp_send_json_error('post id not valid');
+		    wp_send_json_error('post id is empty or not numeric!');
         }
 	    die();
     }
@@ -445,7 +447,17 @@ class Wplman_Ajax {
 	 * Save shortlink data
 	 */
     public function wplman_save_shortlink(){
-	    $form_data = $_POST['form_data'];
+        /**
+         *
+         * form_data include standard post fields && custom meta fields
+         *  - form_data validation doing in frontend
+         *
+         * in backend:
+         *  - first sanitize all post fields
+         *  - sanitize each field separately before save/update database
+         *
+         */
+	    $form_data = sanitize_post($_POST['form_data']);
 	    if(isset($form_data['ID']) && (int) $form_data['ID'] > 0 ){
 		    $result = wp_update_post($form_data, true);
 		    if(is_wp_error($result)){
@@ -453,6 +465,7 @@ class Wplman_Ajax {
 			    die();
             }
         }else{
+	        // ID not set so this is new post record.
 	        unset($form_data['ID']);
 	        $new_id = wp_insert_post($form_data, true);
 		    if(is_wp_error($new_id)){
@@ -462,14 +475,29 @@ class Wplman_Ajax {
 	        $form_data['ID'] = $new_id;
         }
 
+	    /**
+         * all post fields [exclude ID] are removed from array
+         * we have only meta_fields in $form_data
+         *
+        */
 	    foreach ($form_data as $key => $value){
-		    if(substr($key, 0, 10) === 'shortlink_'){
-			    update_post_meta($form_data['ID'], $key, $value);
+		    // validate key by check prefix meta field
+	        if(substr($key, 0, 10) === 'shortlink_'){
+	            // sanitize value
+			    $clean_value = sanitize_meta($key ,$value, 'post');
+			    update_post_meta($form_data['ID'], $key, $clean_value);
 		    }
 	    }
 
+
+	    /**
+	     * Update terms of post
+	     */
 	    if(isset($form_data['link_group']) && is_array($form_data['link_group'])){
-		    wp_set_post_terms($form_data['ID'], $form_data['link_group'], 'link_group');
+	        // validate : all array item must be integer
+            $link_group_ids  = array_filter($form_data['link_group'], 'ctype_digit');
+
+		    wp_set_post_terms($form_data['ID'], $link_group_ids, 'link_group');
         }else{
 		    wp_set_object_terms($form_data['ID'], NULL, 'link_group');
         }

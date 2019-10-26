@@ -204,16 +204,33 @@ class Wplman_Meta_Fields_Generator{
 		 */
 		foreach($this->meta_fields as $field):
 			$field['id'] = $this->meta_prefix . $field['id'];
+
+		    $clear_value = sanitize_meta($field['id'], $_POST[$field['id']], 'post');
 			if(isset($_POST[$field['id']])):
 				switch( $field['type'] ):
 					case "datetime":
-						update_post_meta($post->ID, $field['id'], date("Y-m-d H:i:s", strtotime( $_POST[$field['id']] ) ) );
+						update_post_meta($post->ID, $field['id'], date("Y-m-d H:i:s", strtotime( $clear_value ) ) );
 						break;
 					case "date":
-						update_post_meta($post->ID, $field['id'], date("Y-m-d", strtotime( $_POST[$field['id']] ) ) );
+						update_post_meta($post->ID, $field['id'], date("Y-m-d", strtotime( $clear_value ) ) );
+						break;
+					case "text":
+						update_post_meta($post->ID, $field['id'], sanitize_text_field($clear_value));
+						break;
+					case "textarea":
+						update_post_meta($post->ID, $field['id'], sanitize_textarea_field($clear_value));
+						break;
+					case "number":
+						update_post_meta($post->ID, $field['id'], (int)($clear_value));
+						break;
+					case "email":
+						update_post_meta($post->ID, $field['id'], sanitize_email($clear_value));
+						break;
+					case "editor":
+						update_post_meta($post->ID, $field['id'], sanitize_textarea_field($clear_value));
 						break;
 					default:
-						update_post_meta($post->ID, $field['id'], $_POST[$field['id']]);
+						update_post_meta($post->ID, $field['id'], sanitize_text_field($clear_value));
 						break;
 				endswitch;
 
